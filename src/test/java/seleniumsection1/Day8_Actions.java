@@ -10,24 +10,30 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Day8_Actions {
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 	
 	 // Setup ChromeDriver
     WebDriverManager.chromedriver().setup();
     WebDriver driver = new ChromeDriver();
-    driver.get("https://example.com");
+    driver.get("https://artoftesting.com/samplesiteforselenium");
     driver.manage().window().maximize();
 
+    
+  
     Actions actions = new Actions(driver);
    
     // Find an element
-    WebElement button = driver.findElement(By.id("clickButton"));
+    WebElement button = driver.findElement(By.id("dblClkBtn"));
     
     // Perform different actions
     actions.click(button).perform();  // Click
-    actions.contextClick(button).perform();  // Right Click
-    actions.doubleClick(button).perform();  // Double Click
-    actions.moveToElement(button).perform();  // Hover
+   // actions.contextClick(button).perform();  // Right Click
+   actions.doubleClick(button).perform();  // Double Click
+   // actions.moveToElement(button).perform();  // Hover
+   
+   
+   
+   Thread.sleep(5000);
 
     driver.quit();
     

@@ -22,12 +22,15 @@ public class chromeoptions {
      
      ChromeOptions options = new ChromeOptions();
      options.addArguments("--headless"); // Run in headless mode
-     options.addArguments("--start-maximized"); // Maximize window
-     options.addArguments("--disable-notifications"); // Block notifications
-     options.addArguments("--disable-gpu"); // Disable GPU acceleration
-     options.addArguments("--ignore-certificate-errors"); // Ignore SSL errors
-     
- 
+      options.addArguments("--start-maximized"); // Maximize window
+      
+      
+    
+//     options.addArguments("--disable-notifications"); // Block notifications
+//     options.addArguments("--disable-gpu"); // Disable GPU acceleration
+//     options.addArguments("--ignore-certificate-errors"); // Ignore SSL errors
+//     
+// 
 
      WebDriver driver = new ChromeDriver(options);
      driver.get("https://www.google.com");

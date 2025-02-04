@@ -44,14 +44,12 @@ public class Day5_SeleniumWaits {
             .pollingEvery(Duration.ofSeconds(2)) // Check every 2 seconds
             .ignoring(NoSuchElementException.class);
 
-    WebElement loginButton = fluentWait.until(new Function<WebDriver, WebElement>() {
-        public WebElement apply(WebDriver driver) {
-            return driver.findElement(By.name("login"));
-        }
-    });
+    
+    WebElement login = fluentWait.until(ExpectedConditions.visibilityOfElementLocated(By.name("login")));
+
 
     // Click login button
-    loginButton.click();
+    login.click();
 
     // Print Page Title (to verify login attempt)
     System.out.println("Page Title: " + driver.getTitle());
